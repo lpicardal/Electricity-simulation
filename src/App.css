@@ -1,0 +1,594 @@
+/* ═══════════════════════════════════════════════════════════════════
+   App.css — Electricity Simulation Styles
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Layout ── */
+.page {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: 100vh;
+  font-family: arial;
+  font-size: 12px;
+  color: #222;
+  background: #f5f5f5;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  background: #1a1a1a;
+  border-right: 1px solid #333;
+  padding: 20px;
+  overflow-y: auto;
+  color: black;
+}
+
+.sidebar-title {
+  font-size: 16px;
+  margin: 0 0 4px;
+  color: #f4a623;
+}
+
+.sidebar-subtitle {
+  color: #f4a623;
+  font-size: 16px;
+  margin: 0 0 14px;
+}
+
+/* ── Main Content ── */
+.main {
+  padding: 20px;
+  overflow-y: auto;
+  background: #f5f5f5;
+}
+
+.main-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* ── Cards / Panels ── */
+.panel {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.panel-dark {
+  background: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+/* ── Section Titles ── */
+.section-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #f4a623;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #f4a623;
+  padding-bottom: 8px;
+}
+
+/* ── Form Groups ── */
+.form-group {
+  margin-bottom: 14px;
+}
+
+/* ── Input Fields ── */
+.input {
+  padding: 10px 12px;
+  font-size: 11px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  background: white;
+  width: 100%;
+  font-family: arial;
+  color: #212121;
+  transition: border-color 0.2s;
+  outline: none;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: #f4a623;
+}
+
+.input-dark {
+  padding: 10px 12px;
+  font-size: 11px;
+  border: 2px solid #404040;
+  border-radius: 6px;
+  background: #333;
+  width: 100%;
+  font-family: arial;
+  color: #fff;
+  transition: border-color 0.2s;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input-dark:focus {
+  border-color: #f4a623;
+}
+
+.input-custom {
+  width: 300px;
+  font-family: arial;
+}
+
+/* ── Buttons ── */
+.btn {
+  padding: 10px 20px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: none;
+  background: #f4a623;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: arial;
+}
+
+.btn:hover {
+  background: #e09112;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(244, 166, 35, 0.3);
+}
+
+.btn-small {
+  font-size: 11px;
+  padding: 3px 8px;
+}
+
+.btn-secondary {
+  padding: 8px 16px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 2px solid #e0e0e0;
+  background: white;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: arial;
+}
+
+.btn-secondary:hover {
+  border-color: #f4a623;
+  color: #f4a623;
+}
+
+.btn-primary {
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: #f4a623;
+  color: #fff;
+  font-family: arial;
+  width: 100%;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #e09112;
+}
+
+.btn-reset {
+  background: #888;
+  border-color: #888;
+}
+
+.btn-reset:hover {
+  background: #666;
+}
+
+.btn-play {
+  width: auto;
+  padding: 6px 24px;
+}
+
+/* ── Preset Buttons ── */
+.preset-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.btn-preset {
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  font-weight: 400;
+  color: #666;
+  font-family: arial;
+  box-sizing: border-box;
+  width: 100%;
+  transition: all 0.2s;
+}
+
+.btn-preset:hover {
+  border-color: #f4a623;
+  color: #f4a623;
+}
+
+.btn-preset.active {
+  border: 2px solid #f4a623;
+  background: #fff3e0;
+  font-weight: 600;
+  color: #f4a623;
+}
+
+/* ── Custom Input Row ── */
+.custom-input-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.custom-label {
+  font-size: 12px;
+  color: white;
+}
+
+/* ── Appliance List ── */
+.appliance-toolbar {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.appliance-count {
+  font-size: 12px;
+  color: white;
+  align-self: center;
+}
+
+.appliance-list {
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.appliance-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 4px;
+  cursor: pointer;
+  background: white;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 12px;
+}
+
+.appliance-item.disabled {
+  cursor: default;
+}
+
+.appliance-item.selected {
+  background: #f0f8ff;
+}
+
+.appliance-item .appliance-name {
+  flex: 1;
+  font-weight: 400;
+}
+
+.appliance-item.selected .appliance-name {
+  font-weight: 600;
+}
+
+.appliance-power {
+  color: black;
+  font-size: 11px;
+}
+
+/* ── Usage Settings ── */
+.usage-settings-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.usage-item {
+  padding: 6px 4px;
+  border-bottom: 1px solid white;
+}
+
+.usage-item-label {
+  font-weight: 600;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.usage-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.usage-row+.usage-row {
+  margin-top: 2px;
+}
+
+.usage-label {
+  font-size: 10px;
+  color: white;
+  width: 55px;
+}
+
+.usage-input {
+  width: 40px;
+  padding: 2px 4px;
+  font-size: 11px;
+  border: 1px solid white;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.usage-input-wide {
+  width: 50px;
+  padding: 2px 4px;
+  font-size: 11px;
+  border: 1px solid white;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.usage-separator {
+  font-size: 10px;
+  color: white;
+}
+
+/* ── Total Box ── */
+.total-box {
+  font-size: 11px;
+  color: black;
+  margin-bottom: 10px;
+  padding: 6px 8px;
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.total-box .exceeds {
+  color: orange;
+  margin-left: 6px;
+}
+
+/* ── Simulation Header ── */
+.sim-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.sim-header h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.sim-status {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.sim-status.ready {
+  color: #888;
+}
+
+.sim-status.running {
+  color: #2a2;
+}
+
+.sim-status.done {
+  color: #333;
+}
+
+.sim-status.overload {
+  color: red;
+}
+
+/* ── Status Row ── */
+.status-row {
+  display: flex;
+  gap: 28px;
+}
+
+.status-row.normal {
+  background: #f8fff8;
+  border-color: #d0d0d0;
+}
+
+.status-row.danger {
+  background: #fff0f0;
+  border-color: #e88;
+}
+
+.status-metric-label {
+  font-size: 10px;
+  color: #666;
+}
+
+.status-metric-value {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.status-metric-value.ok {
+  color: #2a2;
+}
+
+.status-metric-value.danger {
+  color: red;
+}
+
+.status-metric-value.neutral {
+  color: #333;
+}
+
+/* ── Overload Warning ── */
+.overload-warning {
+  background: #fff0f0;
+  border-color: red;
+  font-size: 12px;
+}
+
+/* ── Progress ── */
+.progress-text {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 3px;
+}
+
+.progress-bar {
+  background: #e0e0e0;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #555;
+  transition: width 0.3s;
+}
+
+/* ── Controls Panel ── */
+.controls-panel {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.speed-label {
+  font-size: 12px;
+  color: white;
+}
+
+.speed-slider {
+  vertical-align: middle;
+}
+
+/* ── Two-Column Grid ── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ── Data Tables ── */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.data-table th {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 2px solid #f4a623;
+  background: #f8f9fa;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.data-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+  color: #444;
+}
+
+.data-table tr:hover {
+  background: #f5f5f5;
+}
+
+.data-table tr.active-row {
+  background: #fffde0;
+}
+
+.data-table tr.overload-row {
+  background: #fff0f0;
+}
+
+.data-table tr.highlight-row {
+  background: #fffff0;
+}
+
+.data-table .cell-bold {
+  font-weight: 600;
+}
+
+.data-table .cell-danger {
+  font-weight: 600;
+  color: red;
+}
+
+.data-table .cell-ok {
+  color: #2a2;
+}
+
+/* ── Event Log ── */
+.event-log-wrap {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.event-log-wrap thead tr {
+  position: sticky;
+  top: 0;
+  background: #f5f5f5;
+}
+
+/* ── Error Text ── */
+.error-text {
+  color: #c0392b;
+  font-size: 11px;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* ── Badges ── */
+.badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.badge-success {
+  background: #e8f5e9;
+  color: #27ae60;
+}
+
+.badge-warning {
+  background: #fff3e0;
+  color: #f4a623;
+}
+
+.badge-error {
+  background: #ffebee;
+  color: #c0392b;
+}
